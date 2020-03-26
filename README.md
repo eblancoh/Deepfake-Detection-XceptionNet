@@ -10,4 +10,4 @@ This is one model for CS3244 Machine Learning Project
 **Xception**:
  - [paper](https://arxiv.org/pdf/1610.02357.pdf)
  - [git repo(original)](https://github.com/tstandley/Xception-PyTorch)
-This reference clllode is implemented with PyTorch.
+This reference code is implemented with PyTorch.
