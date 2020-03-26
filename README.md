@@ -1,7 +1,7 @@
 # Deepfake-Detection-XceptionNet
-CS3244 Machine Learning Project
+This is one model for CS3244 Machine Learning Project
 
-###Some Links:
+# Some Links:
 **FaceForensics++**: 
  - [paper](https://arxiv.org/pdf/1901.08971.pdf)
  - [git repo](https://github.com/ondyari/FaceForensics)
