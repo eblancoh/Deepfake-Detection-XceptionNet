@@ -9,8 +9,18 @@ def new_model(image_size = 299):
     model = xception.Xception(include_top=False, weights='imagenet')
 
     model = Model(inputs=inputs, outputs=model)
-    
-    sgd= keras.optimizers.SGD(momentum=0.9, lr=0.045, decay=1e-6)
+
+    def step_decay(epoch):
+        initial_lrate = 0.045
+        drop = 0.94
+        epochs_drop = 2.0
+        lrate = initial_lrate * math.pow(drop,
+                                         math.floor((1 + epoch) / epochs_drop))
+        return lrate
+
+    lrate = LearningRateScheduler(step_decay)
+
+    sgd = keras.optimizers.SGD(momentum=0.9, lr=lrate)
     model.compile(loss='binary_crossentropy', optimizer=sgd, metrics=['accuracy'])
     
     model.summary()
